@@ -1,0 +1,6 @@
+{
+  "name": "Tierra Prometida - Control de Niños",
+  "description": "Sistema de registro, consentimiento informado y control de salones para el ministerio infantil Tierra Prometida de la Iglesia Comunidad Cristiana de Fe y Fuego.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

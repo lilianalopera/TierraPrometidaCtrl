@@ -1,0 +1,166 @@
+{
+  "entities": {
+    "Child": {
+      "title": "Child",
+      "description": "Registro de un niño o niña en el ministerio infantil Tierra Prometida",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único del niño"
+        },
+        "registrationNumber": {
+          "type": "string",
+          "description": "Código o número de registro oficial (ej: TP-2026-001)"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Nombre completo del menor"
+        },
+        "birthDate": {
+          "type": "string",
+          "description": "Fecha de nacimiento en formato YYYY-MM-DD"
+        },
+        "ageAtDec31": {
+          "type": "number",
+          "description": "Edad calculada al 31 de diciembre del año en curso"
+        },
+        "currentAge": {
+          "type": "number",
+          "description": "Edad actual cronológica"
+        },
+        "classroom": {
+          "type": "string",
+          "description": "Salón asignado: Visionarios, Exploradores, Conquistadores, Semillitas o Transición"
+        },
+        "fatherName": {
+          "type": "string",
+          "description": "Nombre completo del padre"
+        },
+        "fatherPhone": {
+          "type": "string",
+          "description": "Número de teléfono del padre"
+        },
+        "motherName": {
+          "type": "string",
+          "description": "Nombre completo de la madre"
+        },
+        "motherPhone": {
+          "type": "string",
+          "description": "Número de teléfono de la madre"
+        },
+        "churchResponsibleAdult": {
+          "type": "string",
+          "description": "Adulto responsable en la iglesia que entrega o retira al niño"
+        },
+        "authorizerName": {
+          "type": "string",
+          "description": "Nombre completo de quien firma la autorización legal"
+        },
+        "authorizerRelationship": {
+          "type": "string",
+          "description": "Calidad del firmante: Madre, Padre, Tutor legal, Acudiente"
+        },
+        "authorizerIdNumber": {
+          "type": "string",
+          "description": "Documento de identidad de quien autoriza"
+        },
+        "authorizerPhone": {
+          "type": "string",
+          "description": "Teléfono de contacto de quien autoriza"
+        },
+        "consentAccepted": {
+          "type": "boolean",
+          "description": "Indica si aceptó los términos legales obligatorios"
+        },
+        "consentTimestamp": {
+          "type": "string",
+          "description": "Marca de tiempo de aceptación del consentimiento"
+        },
+        "allergiesOrMedicalConditions": {
+          "type": "string",
+          "description": "Alergias o condiciones médicas especiales"
+        },
+        "eps": {
+          "type": "string",
+          "description": "Entidad promotora de salud (EPS)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notas pastorales o pedagógicas de los maestros"
+        },
+        "checkedInToday": {
+          "type": "boolean",
+          "description": "Indica si asistió al culto del día actual"
+        },
+        "checkedInAt": {
+          "type": "string",
+          "description": "Hora en la que se realizó el check-in"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Fecha y hora de creación del registro"
+        }
+      },
+      "required": ["fullName", "birthDate", "classroom", "churchResponsibleAdult", "authorizerName", "consentAccepted"]
+    },
+    "AttendanceLog": {
+      "title": "AttendanceLog",
+      "description": "Registro histórico de asistencia dominical por niño",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único del registro de asistencia"
+        },
+        "childId": {
+          "type": "string",
+          "description": "ID del niño que asistió"
+        },
+        "childName": {
+          "type": "string",
+          "description": "Nombre del menor"
+        },
+        "classroom": {
+          "type": "string",
+          "description": "Salón al que asistió"
+        },
+        "date": {
+          "type": "string",
+          "description": "Fecha del culto en formato YYYY-MM-DD"
+        },
+        "time": {
+          "type": "string",
+          "description": "Hora de ingreso"
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "Nombre del culto o servicio dominical"
+        },
+        "pickupPerson": {
+          "type": "string",
+          "description": "Adulto autorizado que lo entrega o recoge"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Observaciones del día"
+        }
+      },
+      "required": ["childId", "childName", "classroom", "date", "time"]
+    }
+  },
+  "firestore": {
+    "/children/{childId}": {
+      "schema": {
+        "$ref": "#/entities/Child"
+      },
+      "description": "Colección de todos los niños inscritos en el ministerio Tierra Prometida"
+    },
+    "/attendance_logs/{logId}": {
+      "schema": {
+        "$ref": "#/entities/AttendanceLog"
+      },
+      "description": "Historial de asistencia por culto dominical para seguimiento y reportes"
+    }
+  }
+}

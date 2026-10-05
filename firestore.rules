@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    function isValidChild(data) {
+      return data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 200
+        && data.birthDate is string && data.birthDate.size() >= 8 && data.birthDate.size() <= 12
+        && data.classroom is string && data.classroom.size() <= 50
+        && data.churchResponsibleAdult is string && data.churchResponsibleAdult.size() <= 200
+        && data.authorizerName is string && data.authorizerName.size() <= 200
+        && data.consentAccepted == true;
+    }
+
+    function isValidAttendanceLog(data) {
+      return data.childId is string && data.childId.size() > 0 && data.childId.size() <= 128
+        && data.childName is string && data.childName.size() > 0 && data.childName.size() <= 200
+        && data.classroom is string && data.classroom.size() <= 50
+        && data.date is string && data.date.size() >= 8 && data.date.size() <= 12;
+    }
+
+    // Children collection
+    match /children/{childId} {
+      allow read: if true;
+      allow create: if isValidId(childId) && isValidChild(request.resource.data);
+      allow update: if isValidId(childId) && isValidChild(request.resource.data);
+      allow delete: if isValidId(childId);
+    }
+
+    // Attendance logs for Sunday follow-up
+    match /attendance_logs/{logId} {
+      allow read: if true;
+      allow create: if isValidId(logId) && isValidAttendanceLog(request.resource.data);
+      allow update: if isValidId(logId) && isValidAttendanceLog(request.resource.data);
+      allow delete: if isValidId(logId);
+    }
+  }
+}
