@@ -146,7 +146,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
     }
 
     if (!churchResponsibleAdult.trim()) {
-      setFormError('Por favor indique el nombre del adulto responsable en la iglesia (quien entrega o recoge al niño).');
+      setFormError('Encargado de las novedades del niño en la iglesia (quien entrega o recoge al niño).');
       return;
     }
 
@@ -378,7 +378,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Ej: Mateo Alejandro Gómez Lopera"
+                  placeholder="Ej: Mateo Alejandro Gómez"
                   className="w-full px-4 py-2.5 text-sm bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 />
               </div>
@@ -399,7 +399,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   <Calendar className="w-4 h-4 text-slate-400 absolute right-3.5 top-3 pointer-events-none" />
                 </div>
                 <span className="text-[11px] text-slate-500 mt-1 block">
-                  Usada para asignar automáticamente el salón según su edad al 31 de diciembre.
+                  Segun su edad el niño es asignado a un grupo.
                 </span>
               </div>
 
@@ -515,14 +515,14 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
               {/* Adulto responsable en la iglesia */}
               <div className="sm:col-span-2">
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Adulto Responsable en la Iglesia *
+                  Adulto Responsable del niño en la Iglesia *
                 </label>
                 <input
                   type="text"
                   required
                   value={churchResponsibleAdult}
                   onChange={(e) => setChurchResponsibleAdult(e.target.value)}
-                  placeholder="Persona autorizada que entrega y recoge al niño en los cultos/actividades"
+                  placeholder="Persona autorizada que entrega y recoge al niño en las celebraciones/actividades"
                   className="w-full px-4 py-2.5 text-sm bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                 />
                 <div className="flex items-center gap-2 mt-1.5 text-xs text-slate-500">
@@ -621,7 +621,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     required
                     value={authorizerIdNumber}
                     onChange={(e) => setAuthorizerIdNumber(e.target.value)}
-                    placeholder="Ej: 43870046"
+                    placeholder="Ej: 43877746"
                     className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                   />
                 </div>
@@ -645,7 +645,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                       required
                       value={customAuthorizerPhone}
                       onChange={(e) => setCustomAuthorizerPhone(e.target.value)}
-                      placeholder="Ej: 3043636887"
+                      placeholder="Ej: 3045536887"
                       className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   )}
@@ -670,7 +670,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
             </div>
             <div>
               <label className="block text-xs font-semibold text-slate-700 mb-1">
-                Entidad Promotora de Salud (EPS) (Opcional)
+                Entidad Promotora de Salud (EPS)*
               </label>
               <input
                 type="text"
