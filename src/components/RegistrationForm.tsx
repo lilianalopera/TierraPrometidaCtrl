@@ -329,7 +329,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
           </div>
 
           {/* Quick PDF download button from prompt: 'botón visible para descargar un formato de archivo de consentimiento que te adjunto y debe tener los datos que ingresaron en el formulario' */}
-          <div className="flex items-center gap-2">
+          {/*<div className="flex items-center gap-2">
             <button
               type="button"
               onClick={handleDownloadDraftPDF}
@@ -338,7 +338,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
             >
               <Download className="w-4 h-4 text-blue-600" />
               <span>Descargar Consentimiento con estos datos</span>
-            </button> */}
+            </button> 
             <button
               type="button"
               onClick={() => onOpenConsentModal(getDraftChild())}
@@ -346,8 +346,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
               title="Vista previa del documento"
             >
               <Eye className="w-4 h-4" />
-            </button>
-          </div>
+            </button> 
+          </div> */}
         </div>
 
         {formError && (
