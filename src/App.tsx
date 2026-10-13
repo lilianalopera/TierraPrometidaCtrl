@@ -298,8 +298,7 @@ export default function App() {
                 </h3>
               </div>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Ministerio Infantil <strong>Tierra Prometida</strong>. Cuidado, formación espiritual en valores y educación bíblica para niños y niñas en Barranquilla.
-              </p>
+                Ministerio Infantil <strong>Tierra Prometida</strong>. Generaciones de niños conocedores y amantes de Dios que expresen Su amor y poder para transformar el Atlántico, Colombia y el mundo              </p>
               <div className="flex items-center gap-2 text-xs text-slate-400">
                 <MapPin className="w-3.5 h-3.5 text-blue-400" />
                 <span>Barranquilla, Atlántico - Colombia</span>
