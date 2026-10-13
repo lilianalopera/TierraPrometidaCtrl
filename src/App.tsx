@@ -328,18 +328,18 @@ export default function App() {
             </div>
 
             {/* Legal Framework & Cloud Persistence */}
-            <div className="space-y-2 text-xs text-slate-400">
+           {/* <div className="space-y-2 text-xs text-slate-400">
               <h4 className="font-bold text-sm text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <Cloud className="w-4 h-4 text-emerald-400" />
                 <span>Base de Datos y Sincronización</span>
               </h4>
               <p className="leading-relaxed text-[11px]">
                 Base de datos en la nube (Firebase Firestore) activa con sincronización en tiempo real. Los registros y la asistencia dominical se respaldan instantáneamente entre maestros y recepción.
-              </p>
+              </p> 
               <p className="leading-relaxed text-[11px] pt-1">
                 Tratamiento conforme a las Leyes colombianas <strong>527 de 1999</strong> y <strong>1581 de 2012</strong>.
               </p>
-            </div>
+            </div>*/}
 
           </div>
 
