@@ -338,7 +338,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
             >
               <Download className="w-4 h-4 text-blue-600" />
               <span>Descargar Consentimiento con estos datos</span>
-            </button>
+            </button> */}
             <button
               type="button"
               onClick={() => onOpenConsentModal(getDraftChild())}
