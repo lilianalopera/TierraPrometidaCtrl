@@ -122,7 +122,7 @@ export const TeachersPortal: React.FC<TeachersPortalProps> = ({
                 <KeyRound className="w-4 h-4 text-slate-400 absolute right-3.5 top-3 pointer-events-none" />
               </div>
               <p className="text-[11px] text-slate-400 mt-1">
-                Clave predeterminada del ministerio: <code className="font-bold text-blue-600">fe y fuego</code>
+                Para acceder pedir clave a : <code className="font-bold text-blue-600">Liliana Lopera</code>
               </p>
             </div>
 
@@ -134,7 +134,7 @@ export const TeachersPortal: React.FC<TeachersPortalProps> = ({
             </button>
           </form>
 
-          <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col gap-2">
+          {/* <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col gap-2">
             <button
               type="button"
               onClick={handleQuickDemoLogin}
@@ -142,7 +142,7 @@ export const TeachersPortal: React.FC<TeachersPortalProps> = ({
             >
               Acceso Rápido para Prueba (Un clic)
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     );
